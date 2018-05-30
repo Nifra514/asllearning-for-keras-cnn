@@ -3,5 +3,5 @@ session_start ();
 session_destroy ();
 $_SESSION = [];
 
-header('index.php');
+header('Location:index.php');
 ?>
