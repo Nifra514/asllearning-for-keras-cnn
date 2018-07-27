@@ -4,15 +4,37 @@ class control extends mysqldb {
 	public function __construct() {
 		parent::__construct ();
 	}
+	
+	function write_log($user_id, $type, $data, $action, $status, $risk){
+		$encoded_data = json_encode($data);
+		$query = "INSERT INTO `log_details` (`u_id`, `type`, `data`, `action`, `status`, `timestamp`, `risk`) VALUES ('$user_id', '$type', '$encoded_data', '$action', '$status', NOW(), '$risk')";
+		$this->comq($query);
+	}
+	
+	
+	function get_user_from_token($token) {
+		$sql = "SELECT * FROM user_details WHERE token='".$token."'";
+		return $this->comq($sql);
+	}
+	
+	function token_up($token, $uname) {
+		$sql = "UPDATE user_details SET token='$token' WHERE username='$uname'";
+		return $this->comq($sql);
+	}
 
 	function exists($uname) {
 		$sql = "SELECT u_id FROM user_details WHERE username = '$uname'";
 		return $this->comq($sql);
 	}
 	
+	function pwd_exists($password) {
+		$sql = "SELECT u_id FROM user_details WHERE password = '$password'";
+		return $this->comq($sql);
+	}
+	
 	function email_exists($email) {
 	
-		$sql = "SELECT u_id FROM user_details WHERE email_id = '$email'";
+		$sql = "SELECT u_id FROM user_details WHERE email_id = '$email'";		
 		return $this->comq($sql);
 	}
 	
@@ -20,9 +42,9 @@ class control extends mysqldb {
 		return '<ul><li>' . implode('</li><li>', $errors) . '</li></ul>';
 	}
 	
-	public function reg_user($name,$email,$phone,$uname,$password1,$mailcode,$tocken){		
-		$sql ="INSERT INTO `user_details`(`name`, `email_id`,`tp_no`, `username`, `password`, `mailcode`, `tocken`,`date`)
-		VALUES ('$name','$email','$phone','$uname','$password1','$mailcode','$tocken',NOW())";
+	public function reg_user($name,$email,$phone,$uname,$password1,$mailcode){		
+		$sql ="INSERT INTO `user_details`(`name`, `email_id`,`tp_no`, `username`, `password`, `mailcode`,`date`)
+		VALUES ('$name','$email','$phone','$uname','$password1','$mailcode',NOW())";
 	
 		return $this->comq($sql);	
 	}
@@ -31,7 +53,7 @@ class control extends mysqldb {
 	
 		$sql = "SELECT * FROM user_details WHERE username = '$uname' AND password = '$password1'";
 		
-		return $this->comql($sql);
+		return $this->comq($sql);
 	}
 	
 	function logged_in() {
@@ -64,7 +86,7 @@ class control extends mysqldb {
 		}
 	}
 	
-	function select_score() {
+/*	function select_score() {
 		if($this->logged_in() === true) {
 				
 			$uid = $_SESSION['id'];
@@ -75,9 +97,10 @@ class control extends mysqldb {
 	
 		}
 	}
+
 	
 		
-/*	function activation($name, $email, $mailcode) {
+	function activation($name, $email, $mailcode) {
 		return $this->act_mail($email, 'Activate your account', "Hi " . $name. ", \n\nYou need to activate your account in order to use the features of Safra Travels. Please click the link below: \n\nhttp://localhost:8888/Views/activate.php?mailid=" . $email . "&mailcode=" . $mailcode . " \n\nRegards,\nasllearning.", 'From: asllearning.com');
 		
 	}	
