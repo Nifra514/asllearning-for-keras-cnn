@@ -60,37 +60,8 @@ function scrollToTop() {
 	    return true;
 	}
   </script>
-  
- <!-- .js for delete confirmation--> 
- <script type="text/javascript">
-  function delete_id(id)
-  {
-   if(confirm('Please Confirm To Delete This Record ?'))
-   {
-    window.location.href='all_profiles.php?delete_id='+id;
-   }
-  }
-  </script>
-  
-  <!-- .js for send mail by admin--> 
-   <script type="text/javascript">
-  function m_id(id)
-   {
-    window.location.href='admin_mail.php?m_id='+id;
-   }
-  
-  </script>
-  
-    <!-- .js for user bookings admin--> 
-   <script type="text/javascript">
-  function ps_id(id)
-   {
-    window.location.href='user_bookings.php?ps_id='+id;
-   }
-  
-  </script>
 
-	<script type="text/javascript">
+  <script type="text/javascript">
   function reg()
    {
     window.location.href='registration.php';
