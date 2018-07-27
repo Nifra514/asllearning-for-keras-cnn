@@ -33,11 +33,11 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 	}
 		
 	$user_id = $logged_user['u_id'];	
-	$type = "log"; // log, warning,error
+	$type = "Log"; // log, warning,error
 	$data = array('action'=>"User: ".$user_id." successfully logged in");
-	$action  = "login";
+	$action  = "Login";
 	$status = 1;
-	$risk = "none";
+	$risk = "None";
 	
 	$obj->write_log($user_id, $type, $data, $action, $status, $risk);
 	
@@ -45,9 +45,9 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 } else {
 	
 	$user_id = 0;
-	$type = "log"; // log, warning,error
+	$type = "Log"; // log, warning,error
 	$data = array('action'=>"login failed with Username:".$uname." Password :".$password);
-	$action  = "login";
+	$action  = "Login";
 	$status = 1;
 	$risk = "High";
 	

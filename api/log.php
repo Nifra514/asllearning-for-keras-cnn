@@ -7,9 +7,8 @@ if (!$logged_user) {
 
 // insert query log here
 $user_id = $logged_user['id'];
-$type = $_POST['type'];
+$type = $_POST['lg_type'];
 $data = $_POST['data'];
-$action = $_POST['action'];
 $action = $_POST['action'];
 $status = $_POST['status'];
 $risk = $_POST['risk'];
