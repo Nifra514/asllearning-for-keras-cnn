@@ -14,7 +14,6 @@ if (isset ( $title )) {
 <link rel="stylesheet" href="../assets/css/styles.css">
 <link rel="stylesheet" type="text/css"
 	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
-
 	
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
