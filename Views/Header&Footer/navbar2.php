@@ -22,7 +22,6 @@
 				
 
 				<li><a href="http://localhost:8888/asllearning/Views/download.php">Download</a></li>
-				<li><a href="http://localhost:8888/asllearning/Views/profile.php">Profile</a></li>
 				
 			</ul>
 
