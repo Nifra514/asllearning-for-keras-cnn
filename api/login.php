@@ -34,7 +34,7 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 		
 	$user_id = $logged_user['u_id'];	
 	$type = "Log"; // log, warning,error
-	$data = array('action'=>"User: ".$user_id." successfully logged in");
+	$data = array('action'=>"User: ".$user_id." successfully logged in at ASLapp");
 	$action  = "Login";
 	$status = 1;
 	$risk = "None";
@@ -46,7 +46,7 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 	
 	$user_id = 0;
 	$type = "Log"; // log, warning,error
-	$data = array('action'=>"login failed with Username:".$uname." Password :".$password);
+	$data = array('action'=>"login failed at ASLapp with Username: ".$uname." Password: ".$password);
 	$action  = "Login";
 	$status = 1;
 	$risk = "High";
