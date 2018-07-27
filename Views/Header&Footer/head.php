@@ -67,5 +67,13 @@ function scrollToTop() {
    }
   
   </script>
+  
+    <script type="text/javascript">
+  function download()
+   {
+    window.location.href='download_success.php';
+   }
+  
+  </script>
 
 </head>
