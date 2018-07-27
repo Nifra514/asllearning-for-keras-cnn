@@ -16,12 +16,13 @@ $name = $user_data ['name'];
 $email = $user_data ['email_id'];
 $tp = $user_data ['tp_no'];
 
-$s_data = $obj->select_score ();
+// $s_data = $obj->select_score ();
 
 ?>
 
 <div class="container">
 	<div class="row">
+		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<div class="well">
 				<div class="form-horizontal">
@@ -58,40 +59,6 @@ $s_data = $obj->select_score ();
 				</div>
 			</div>
 		</div>
-
-		<div class="col-md-4">
-
-			<div style="overflow-x: auto;">
-				<table>
-					<tr>
-						<th>No.</th>
-						<th>Score</th>
-						<th>Date & Time</th>
-					</tr>
-							<?php 
-		$i = 1;
-		while ($score_data = mysqli_fetch_array ( $s_data )){
-			
-			$score = $score_data ['score'];
-			$date = $score_data ['date'];
-		
-		?>
-					<tr>
-						<td><?php echo $i;?></td>
-						<td><?php echo $score;?></td>
-						<td><?php echo $date;?></td>
-					</tr>
-							<?php 
-			$i++;
-		}
-			?>
-					
-				</table>
-			</div>
-			
-	
-		</div>
-
 	</div>
 </div>
 

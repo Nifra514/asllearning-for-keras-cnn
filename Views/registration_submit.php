@@ -35,9 +35,8 @@ if (isset ( $_POST ['register'] )) {
 	$password_again = mysqli_real_escape_string ( $obj->link, $_POST ['password_again'] );
 	
 	$password1 = md5 ( $_POST ['password'] );
-	$mailcode = md5 ( $_POST ['uname'] . microtime () );
-	$tocken = md5 ( $_POST ['uname'] . microtime () . $_POST ['phone'] );
-	
+	$mailcode = md5 ( $_POST ['uname'] . microtime (). $_POST ['phone'] );
+		
 	// echo $mailcode.'<br>';
 	
 	// echo $tocken;
@@ -104,7 +103,7 @@ if (isset ( $_POST ['register'] )) {
 	
 	if (! $error) {
 		
-		$obj->reg_user ( $name, $email, $phone, $uname, $password1, $mailcode, $tocken );
+		$obj->reg_user ( $name, $email, $phone, $uname, $password1, $mailcode );
 		
 		//$obj->activation($name, $email, $mailcode);
 		
