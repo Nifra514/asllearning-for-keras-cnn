@@ -8,6 +8,15 @@ include ('Header&Footer/header_login.php');
 
 $obj->logged_in_redirect();
 
+$user_id = 0;
+$type = "Log"; // log, warning,error
+$data = array('action'=>"New User Accessing asllearning.info/Views/registration.php");
+$action  = "User Registration";
+$status = 1;
+$risk = "None";
+
+$obj->write_log($user_id, $type, $data, $action, $status, $risk);
+
 ?>
 
 <div class="container">
