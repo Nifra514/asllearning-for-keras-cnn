@@ -35,11 +35,6 @@ if (isset ( $_POST ['register'] )) {
 	$password_again = mysqli_real_escape_string ( $obj->link, $_POST ['password_again'] );
 	
 	$password1 = md5 ( $_POST ['password'] );
-	$mailcode = md5 ( $_POST ['uname'] . microtime (). $_POST ['phone'] );
-		
-	// echo $mailcode.'<br>';
-	
-	// echo $tocken;
 	
 	$unameVer = $obj->exists ( $uname );
 	$countUname = mysqli_num_rows ( $unameVer );
@@ -103,9 +98,20 @@ if (isset ( $_POST ['register'] )) {
 	
 	if (! $error) {
 		
-		$obj->reg_user ( $name, $email, $phone, $uname, $password1, $mailcode );
+		$insert_id = $obj->reg_user ( $name, $email, $phone, $uname, $password1 );
 		
-		//$obj->activation($name, $email, $mailcode);
+		$insert_id = mysqli_insert_id ( $obj->link );
+		
+		$user_id = $insert_id;
+		$type = "Log"; // log, warning,error
+		$data = array (
+				'action' => "User: " . $user_id . " successfully registered with asllearning.info" 
+		);
+		$action = "Registration";
+		$status = 1;
+		$risk = "None";
+		
+		$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
 		
 		?>
 		&nbsp;
@@ -117,8 +123,7 @@ if (isset ( $_POST ['register'] )) {
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<span class="glyphicon glyphicon-thumbs-up">&nbsp;&nbsp;</span><strong>Success!</strong>
-		Successfully Registered! Please Check Your E-Mail For Activation
-		Link!.
+		<?php echo "<br> Successfully Registered!";?>
 	</div>
 </div>
 <script type="text/javascript">
@@ -142,6 +147,22 @@ if (isset ( $_POST ['register'] )) {
 	            
 	            </div>
 </div>
+
+<?php
+		
+		$user_id = 0;
+		$type = "Log"; // log, warning,error
+		$data = array (
+				'action' => "User registration failed with errors: " . $obj->output_errors ( $insertErr ) 
+		);
+		$action = "Registration";
+		$status = 1;
+		$risk = "Medium";
+		
+		$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+		
+		?>
+
 <script type="text/javascript">
 			      
 				setTimeout("location.href = 'registration.php';",3000);	// Page Dillay 2 Second

@@ -21,7 +21,7 @@ $obj->protect_page ();
 
 			<div class="col-md-12">
 				<a href="../sys/ASL_logo.png" download><button
-						class="btn btn-success form-control">Download ASL
+						class="btn btn-success form-control" onclick="download()">Download ASL
 						Learning App</button></a>
 			</div>
 

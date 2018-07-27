@@ -10,8 +10,8 @@ $obj->logged_in_redirect();
 
 $user_id = 0;
 $type = "Log"; // log, warning,error
-$data = array('action'=>"New User Accessing asllearning.info/Views/registration.php");
-$action  = "User Registration";
+$data = array('action'=>"New user accessing asllearning.info/Views/registration.php");
+$action  = "User registration";
 $status = 1;
 $risk = "None";
 
