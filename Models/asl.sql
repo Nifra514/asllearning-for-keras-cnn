@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2018 at 07:19 AM
+-- Generation Time: Jul 27, 2018 at 08:37 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -35,9 +35,21 @@ CREATE TABLE `log_details` (
   `data` varchar(1000) DEFAULT NULL,
   `action` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
-  `timestamp` varchar(255) DEFAULT NULL,
-  `risk` varchar(255) DEFAULT NULL
+  `risk` varchar(255) DEFAULT NULL,
+  `timestamp` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `log_details`
+--
+
+INSERT INTO `log_details` (`l_id`, `u_id`, `type`, `data`, `action`, `status`, `risk`, `timestamp`) VALUES
+(1, 2, 'Log', '{\"action\":\"User: 2 successfully logged in at asllearning.info\"}', 'Login', 1, 'None', '2018-07-27 23:06:30'),
+(2, 2, 'Warning', '{\"action\":\"Permission denied for the user: 2 from asllearning.info\"}', 'Permission', 1, 'High', '2018-07-27 23:06:38'),
+(3, 2, 'Log', '{\"action\":\"User: 2 successfully logged out from asllearning.info\"}', 'Logout', 1, 'None', '2018-07-27 23:06:40'),
+(4, 1, 'Log', '{\"action\":\"User: 1 successfully logged in at asllearning.info\"}', 'Login', 1, 'None', '2018-07-27 23:09:38'),
+(5, 1, 'log', '{\"action\":\"Log data loaded for the admin user: 1 at asllearning.info\"}', 'Permission', 1, 'None', '2018-07-27 23:09:40'),
+(6, 1, 'Log', '{\"action\":\"User: 1 successfully logged out from asllearning.info\"}', 'Logout', 1, 'None', '2018-07-27 23:09:50');
 
 -- --------------------------------------------------------
 
@@ -52,7 +64,7 @@ CREATE TABLE `user_details` (
   `tp_no` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `mailcode` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL,
   `token` varchar(255) DEFAULT NULL,
   `date` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -61,10 +73,10 @@ CREATE TABLE `user_details` (
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`u_id`, `name`, `email_id`, `tp_no`, `username`, `password`, `mailcode`, `token`, `date`) VALUES
-(0, 'System', NULL, NULL, NULL, NULL, '', NULL, NULL),
-(1, 'Mohamed Nifras', 'nifras.ict@gmail.com', 777203595, 'qweqwe', 'cbce932a80afe0b858a6b72320a00ccd', '2b906c456af0beafe2d6f91fe8ab3fd6', '1a0032d2023145e726effff98055e60a76a901d2', '2018-03-18 12:27:08'),
-(2, 'Pathum', 'Pathum@gmail.com', 1234567009, 'asdasd', 'a8f5f167f44f4964e6c998dee827110c', '9c3922e60fd0c92e43b32e0056965a6c', 'da756b347c6231442a2ca25556435b20a28bdb3e', '2018-04-02 00:02:19');
+INSERT INTO `user_details` (`u_id`, `name`, `email_id`, `tp_no`, `username`, `password`, `user_type`, `token`, `date`) VALUES
+(0, 'System', NULL, NULL, NULL, NULL, 'system', NULL, NULL),
+(1, 'Mohamed Nifras', 'nifras.ict@gmail.com', 777203595, 'qweqwe', 'cbce932a80afe0b858a6b72320a00ccd', 'admin', '89ea57e0d50e14e7c12d9809d3c75a5203f1860e', '2018-03-18 12:27:08'),
+(2, 'Pathum', 'Pathum@gmail.com', 1234567009, 'asdasd', 'a8f5f167f44f4964e6c998dee827110c', 'user', 'b71165ead73ab9fe10a155b3c2087bc2b21b5a64', '2018-04-02 00:02:19');
 
 --
 -- Indexes for dumped tables
@@ -91,7 +103,7 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT for table `log_details`
 --
 ALTER TABLE `log_details`
-  MODIFY `l_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `l_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_details`
