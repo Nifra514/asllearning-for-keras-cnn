@@ -4,9 +4,14 @@ class control extends mysqldb {
 	public function __construct() {
 		parent::__construct ();
 	}
-	function write_log($user_id, $type, $data, $action, $status, $risk) {
+	function write_log($user_id, $type, $data, $action, $risk) {
 		$encoded_data = json_encode ( $data );
-		$query = "INSERT INTO `log_details` (`u_id`, `type`, `data`, `action`, `status`, `risk`, `timestamp`) VALUES ('$user_id', '$type', '$encoded_data', '$action', '$status', '$risk', NOW())";
+		
+		date_default_timezone_set ( 'Asia/Colombo' );
+		$time = date ( 'H:i:s' );
+		$date = date ( 'Y-m-d' );
+		
+		$query = "INSERT INTO `log_details` (`u_id`, `type`, `data`, `action`, `status`, `risk`, `date`, `time`) VALUES ('$user_id', '$type', '$encoded_data', '$action', '1', '$risk', '$date','$time')";
 		$this->comq ( $query );
 	}
 	function get_user_from_token($token) {
@@ -59,11 +64,9 @@ class control extends mysqldb {
 		}
 	}
 	function select_log() {
-			
-			$sql = "SELECT * FROM log_details";
-			
-			return $this->comq ( $sql );
+		$sql = "SELECT * FROM log_details";
 		
+		return $this->comq ( $sql );
 	}
 }
 
