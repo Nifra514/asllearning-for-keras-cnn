@@ -31,10 +31,9 @@ $data = array (
 		'action' => "Permission denied for user: " . $user_id . " from asllearning.info"
 );
 $action = "Permission";
-$status = 1;
 $risk = "High";
 	
-$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+$obj->write_log ( $user_id, $type, $data, $action, $risk );
 
 ?>
 
@@ -53,10 +52,9 @@ $obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
 			'action' => "Log data loaded for the admin user: " . $user_id . " at asllearning.info"
 	);
 	$action = "Permission";
-	$status = 1;
 	$risk = "None";
 	
-	$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+	$obj->write_log ( $user_id, $type, $data, $action, $risk );
 	
 	?>
 
@@ -89,7 +87,8 @@ $obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
 		$action = $full_log ['action'];
 		$status = $full_log ['status'];
 		$risk = $full_log ['risk'];
-		$timestamp = $full_log ['timestamp'];
+		$date = $full_log ['date'];
+		$time = $full_log ['time'];
 		
 		?>
 					<tr>
@@ -97,10 +96,10 @@ $obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
 						<td><?php echo $log_u_id;?></td>
 						<td><?php echo $type;?></td>
 						<td><?php echo $data;?></td>
-						<td><?php echo $action;?></td>
-						<td><?php echo $status;?></td>
+						<td><?php echo $action;?></td>						
 						<td><?php echo $risk;?></td>
-						<td><?php echo $timestamp;?></td>
+						<td><?php echo $date;?></td>
+						<td><?php echo $time;?></td>
 
 
 					</tr>

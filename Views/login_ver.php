@@ -56,10 +56,9 @@ if (isset ( $_POST ['login'] )) {
 					'action' => "User: " . $user_id . " successfully logged in at asllearning.info" 
 			);
 			$action = "Login";
-			$status = 1;
 			$risk = "None";
 			
-			$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+			$obj->write_log ( $user_id, $type, $data, $action, $risk );
 			
 			header ( 'Location:download.php' );
 		} else {
@@ -85,10 +84,9 @@ if (isset ( $_POST ['login'] )) {
 					'action' => "login failed at asllearning.info with Username: " . $uname . " Password: " . $password1 
 			);
 			$action = "Login";
-			$status = 1;
 			$risk = "High";
 			
-			$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+			$obj->write_log ( $user_id, $type, $data, $action, $risk );
 			
 			?>
 <script type="text/javascript">

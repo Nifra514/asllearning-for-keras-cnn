@@ -28,10 +28,9 @@ $data = array (
 		'action' => "User: " . $user_id . " successfully downloaded the ASLapp from asllearning.info" 
 );
 $action = "Download";
-$status = 1;
 $risk = "None";
 
-$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+$obj->write_log ( $user_id, $type, $data, $action, $risk );
 
 ?>
 <script type="text/javascript">

@@ -108,10 +108,9 @@ if (isset ( $_POST ['register'] )) {
 				'action' => "User: " . $user_id . " successfully registered with asllearning.info" 
 		);
 		$action = "Registration";
-		$status = 1;
 		$risk = "None";
 		
-		$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+		$obj->write_log ( $user_id, $type, $data, $action, $risk );
 		
 		?>
 		&nbsp;
@@ -156,10 +155,9 @@ if (isset ( $_POST ['register'] )) {
 				'action' => "User registration failed with errors: " . $obj->output_errors ( $insertErr ) 
 		);
 		$action = "Registration";
-		$status = 1;
 		$risk = "Medium";
 		
-		$obj->write_log ( $user_id, $type, $data, $action, $status, $risk );
+		$obj->write_log ( $user_id, $type, $data, $action, $risk );
 		
 		?>
 

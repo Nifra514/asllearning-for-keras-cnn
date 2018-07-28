@@ -1,22 +1,24 @@
 <?php
-ob_start();
-session_start();
+ob_start ();
+session_start ();
 $title = 'ASL Learning | Home';
 include ('../Controllers/control.php');
 $obj = new control ();
-	
+
 include ('Header&Footer/header_login.php');
 
-$obj->logged_in_redirect();
+$obj->logged_in_redirect ();
 
 ?>
 
 <div class="container">
 	<div class="row">
-    <div class="col-md-6" style="margin-top: 20px;">
-    <img src="http://localhost:8888/asllearning/assets/img/aslr.jpg" height="600px" class="d-inline-block align-top img-responsive" alt="">
-    </div>
-    <div class="col-md-1"></div>
+		<div class="col-md-6" style="margin-top: 20px;">
+			<img src="http://localhost:8888/asllearning/assets/img/aslr.jpg"
+				height="600px" class="d-inline-block align-top img-responsive"
+				alt="">
+		</div>
+		<div class="col-md-1"></div>
 		<div class="col-md-5">
 			<div class="well">
 				<form class="form-horizontal" action="login_ver.php" method="POST">
@@ -33,17 +35,17 @@ $obj->logged_in_redirect();
 								name="password" class="form-control" required>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<div class="col-md-12">
-                        <button type="submit" id="submit" value="submit" name="login"
+							<button type="submit" id="submit" value="submit" name="login"
 								class="btn btn-success form-control">Login</button>
 						</div>
 					</div>
 
-                 	<div class="form-group">
-						<div class="col-md-12"> 
-								<button id="regidter" value="register" name="register"
+					<div class="form-group">
+						<div class="col-md-12">
+							<button id="regidter" value="register" name="register"
 								class="btn btn-primary form-control" onclick="reg()">Register
 								Here</button>
 						</div>
@@ -51,7 +53,7 @@ $obj->logged_in_redirect();
 				</form>
 			</div>
 		</div>
-</div>
+	</div>
 </div>
 
 <?php
