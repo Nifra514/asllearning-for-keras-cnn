@@ -10,7 +10,6 @@ $user_id = $logged_user['id'];
 $type = $_POST['lg_type'];
 $data = $_POST['data'];
 $action = $_POST['action'];
-$status = $_POST['status'];
 $risk = $_POST['risk'];
 
 // insrt qury generate

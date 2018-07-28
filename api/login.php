@@ -36,10 +36,9 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 	$type = "Log"; // log, warning,error
 	$data = array('action'=>"User: ".$user_id." successfully logged in at ASLapp");
 	$action  = "Login";
-	$status = 1;
 	$risk = "None";
 	
-	$obj->write_log($user_id, $type, $data, $action, $status, $risk);
+	$obj->write_log($user_id, $type, $data, $action, $risk);
 	
 	
 } else {
@@ -48,10 +47,9 @@ if (($countUname >= 1) && ($countPWD >= 1)) {
 	$type = "Log"; // log, warning,error
 	$data = array('action'=>"login failed at ASLapp with Username: ".$uname." Password: ".$password);
 	$action  = "Login";
-	$status = 1;
 	$risk = "High";
 	
-	$obj->write_log($user_id, $type, $data, $action, $status, $risk);
+	$obj->write_log($user_id, $type, $data, $action, $risk);
 	
 	$resp_status = false;
 	$resp_data = "Invalid Username or Password!!!";
