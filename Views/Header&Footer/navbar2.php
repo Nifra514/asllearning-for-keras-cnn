@@ -39,7 +39,7 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-			<li><a>Hi! <?php echo $_SESSION['name']; ?></a></li>
+			<li><a>Hi! <?php echo $_SESSION['u_name']; ?></a></li>
 				<li><a href="http://localhost:8888/asllearning/Views/logout.php">Logout</a></li>
 				
 			</ul>
