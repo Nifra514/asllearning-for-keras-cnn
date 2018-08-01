@@ -47,7 +47,7 @@ if (isset ( $_POST ['login'] )) {
 			$user_data = mysqli_fetch_array ( $varLogin );
 			
 			$_SESSION ['id'] = $user_data ['u_id'];
-			$_SESSION ['name'] = $user_data ['name'];
+			$_SESSION ['u_name'] = $user_data ['u_name'];
 			$_SESSION ['utype'] = $user_data ['user_type'];
 			
 			$user_id = $_SESSION ['id'];

@@ -61,7 +61,13 @@ $obj->write_log ( $user_id, $type, $data, $action, $risk );
 
 
 <div class="container">
-	<div class="row">
+<!-- &nbsp; -->
+<!-- 	<div class="row"> -->
+<!-- 	<div class="col-md-4"></div> -->
+<!-- 	<div class="col-md-4"></div> -->
+<!-- 	<div class="col-md-4"></div>	 -->
+<!-- 	</div> -->
+	<div class ="row">
 		<div class="col-md-12">
 
 			<div style="overflow-x: auto;">
@@ -69,19 +75,20 @@ $obj->write_log ( $user_id, $type, $data, $action, $risk );
 					<tr>
 						<th>Id.</th>
 						<th>User</th>
+						<th>Username</th>
 						<th>Type</th>
 						<th>Log Data</th>
 						<th>Action</th>
-						<th>Status</th>
 						<th>Risk</th>
-						<th>Date & Time</th>
+						<th>Date</th>
+						<th>Time</th>
 					</tr>
 							<?php
 	$log_data = $obj->select_log ();
 	$i = 1;
 	while ( $full_log = mysqli_fetch_array ( $log_data ) ) {
 		
-		$log_u_id = $full_log ['u_id'];
+		$u_id = $full_log ['u_id'];
 		$type = $full_log ['type'];
 		$data = $full_log ['data'];
 		$action = $full_log ['action'];
@@ -90,10 +97,20 @@ $obj->write_log ( $user_id, $type, $data, $action, $risk );
 		$date = $full_log ['date'];
 		$time = $full_log ['time'];
 		
+		$getuser = $obj->get_user_from_id ( $u_id );
+		
+		if ((mysqli_num_rows ( $getuser )) > 0) {
+				
+			$user_data = mysqli_fetch_array ( $getuser );
+			$username = $user_data['username'];
+			
+		}
+		
 		?>
 					<tr>
 						<td><?php echo $i;?></td>
-						<td><?php echo $log_u_id;?></td>
+						<td><?php echo $u_id;?></td>
+						<td><?php echo $username;?></td>
 						<td><?php echo $type;?></td>
 						<td><?php echo $data;?></td>
 						<td><?php echo $action;?></td>						
