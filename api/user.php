@@ -8,7 +8,7 @@ if (!$logged_user) {
 echo json_encode(array(
 		
 		'id'=> $logged_user['u_id'],
-		'u_name' => $logged_user['name'],	
+		'u_name' => $logged_user['u_name'],	
 			
 ));
 exit();
