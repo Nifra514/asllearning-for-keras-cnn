@@ -5,7 +5,7 @@
 					<div class="col-md-4">
 						<img
 							class="img-responsive"
-							src="http://localhost:8888/asllearning/assets/img/asllogo2.png"
+							src="../assets/img/asllogo2.png"
 							alt="" style="width: 167px; height: 50px" />
 					</div>
 

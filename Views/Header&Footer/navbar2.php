@@ -18,29 +18,29 @@
 		
 		<ul class="nav navbar-nav">
 				
-				<li><img src="http://localhost:8888/asllearning/assets/img/asllogo2.png" height="50px" class="d-inline-block align-top" alt=""></li>
+				<li><img src="../assets/img/asllogo2.png" height="50px" class="d-inline-block align-top" alt=""></li>
 				
 				<?php 
 				if (($obj->logged_in() === true) && ($_SESSION ['utype'] === "admin")){				
 				?>
 
-				<li><a href="http://localhost:8888/asllearning/Views/download.php">Download</a></li>
-				<li><a href="http://localhost:8888/asllearning/Views/system_log.php">View Log</a></li>
+				<li><a href="../Views/download.php">Download</a></li>
+				<li><a href="../Views/system_log.php">View Log</a></li>
 				
 				<?php 
 				} else if ($obj->logged_in() === true) {				
 				?>
 				
-				<li><a href="http://localhost:8888/asllearning/Views/download.php">Download</a></li>
+				<li><a href="../Views/download.php">Download</a></li>
 								
 				<?php 
 				} 				
 				?>
-			</ul>
+			</ul>asllearning.info/api/login.php
 
 			<ul class="nav navbar-nav navbar-right">
 			<li><a>Hi! <?php echo $_SESSION['u_name']; ?></a></li>
-				<li><a href="http://localhost:8888/asllearning/Views/logout.php">Logout</a></li>
+				<li><a href="../Views/logout.php">Logout</a></li>
 				
 			</ul>
 

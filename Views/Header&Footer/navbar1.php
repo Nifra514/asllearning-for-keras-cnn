@@ -18,12 +18,12 @@
 		
 		<ul class="nav navbar-nav">
 				
-				<li><img src="http://localhost:8888/asllearning/assets/img/asllogo2.png" height="50px" class="d-inline-block align-top" alt=""></li>
+				<li><img src="../assets/img/asllogo2.png" height="50px" class="d-inline-block align-top" alt=""></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="http://localhost:8888/asllearning/Views/registration.php">Register</a></li>
-				<li><a href="http://localhost:8888/asllearning/Views/index.php">Login</a></li>
+			<li><a href="../Views/registration.php">Register</a></li>
+				<li><a href="../Views/index.php">Login</a></li>
 				
 			</ul>
 
