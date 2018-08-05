@@ -36,7 +36,7 @@
 				<?php 
 				} 				
 				?>
-			</ul>asllearning.info/api/login.php
+			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 			<li><a>Hi! <?php echo $_SESSION['u_name']; ?></a></li>
