@@ -2,7 +2,7 @@
 class mysqldb {
 	public $link;
 	public function __construct() {
-		$db = parse_ini_file("dbcon.ini");
+		$db = parse_ini_file("dbcon1.ini");
 		
 		$sqltype = $db['sqltype'];
 		$host = $db['host'];
