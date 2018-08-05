@@ -18,7 +18,7 @@ if (($obj->logged_in () === true) && ($_SESSION ['utype'] !== "admin")) {
 			aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
-		<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;<strong>Permission Denied!</strong><?php echo "YOU ARE NOT ALLOWED TO VIEW THIS PAGE";?>
+		<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;<strong>Permission Denied!</strong><?php echo " YOU ARE NOT ALLOWED TO VIEW THIS PAGE";?>
 	            
 	            </div>
 </div>

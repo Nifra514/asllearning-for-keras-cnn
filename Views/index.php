@@ -14,7 +14,7 @@ $obj->logged_in_redirect ();
 <div class="container">
 	<div class="row">
 		<div class="col-md-6" style="margin-top: 20px;">
-			<img src="http://localhost:8888/asllearning/assets/img/aslr.jpg"
+			<img src="../assets/img/aslr.jpg"
 				height="600px" class="d-inline-block align-top img-responsive"
 				alt="">
 		</div>

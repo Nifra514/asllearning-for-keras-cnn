@@ -16,7 +16,7 @@ $obj->protect_page ();
 		<div class="col-md-4">
 		
 	<div class="col-md-12">	    
-    <img src="http://localhost:8888/asllearning/assets/img/keep1.jpg" height="auto" width="auto" class="d-inline-block align-top img-responsive" alt="">
+    <img src="../assets/img/keep1.jpg" height="auto" width="auto" class="d-inline-block align-top img-responsive" alt="">
 	</div>
 
 			<div class="col-md-12">
@@ -27,7 +27,7 @@ $obj->protect_page ();
 
 
 	<div class="col-md-12">	    
-    <img src="http://localhost:8888/asllearning/assets/img/keep2.jpg" height="auto" width="auto" class="d-inline-block align-top img-responsive" alt="">
+    <img src="../assets/img/keep2.jpg" height="auto" width="auto" class="d-inline-block align-top img-responsive" alt="">
 	</div>
 		</div>
 
