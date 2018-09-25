@@ -3,6 +3,6 @@ $title = 'ASL Learning | Home';
 ?>
 <script type="text/javascript">
 			      
-				location.href = 'Views/index.php';	// Page Dillay 2 Second
+				location.href = 'Views/index.php';	
 				
 				</script>
