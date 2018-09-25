@@ -42,9 +42,9 @@ if (isset ( $_POST ['register'] )) {
 	$emailVer = $obj->email_exists ( $email );
 	$countVer = mysqli_num_rows ( $emailVer );
 	
-	if (! preg_match ( '/^[a-z]{2,30}$/i', $name )) {
+	if (! preg_match ( '/^[a-z ]{2,30}$/i', $name )) {
 		$error = true;
-		$insertErr [] = "Your first name can contain only alphabets";
+		$insertErr [] = "Your name can contain only alphabets";
 	}
 	
 	if (preg_match ( "/\\s/", $uname ) == true) {

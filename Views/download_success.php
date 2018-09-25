@@ -4,7 +4,7 @@ session_start ();
 $title = 'ASL Learning | Download_Seccess';
 include ('../Controllers/control.php');
 $obj = new control ();
-include ('../Views/Header&Footer/header_login.php');
+include ('../Views/Header&Footer/header.php');
 
 ?>				
 				&nbsp;
